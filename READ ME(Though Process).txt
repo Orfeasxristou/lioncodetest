@@ -1,0 +1,47 @@
+Though Process and steps:
+Level 1:
+Create a Local Laravel Project
+Process:
+Step 1:Create a folder into xampp/htdocs/lioncodetest
+Step 2:Open cmd and type :composer create-project laravel/laravel test to install laravel
+Step 3:In the newest versions of Laravel Sanctum is already installed so we don't need to install it
+Step 4:Create a Database in phpmyadmin called lioncode
+Step 5:in the file .env I change the default name database(which is laravel)to Lioncode so i connect my DB
+Final Step:Using php artisan migrate command to create the tables and use php artisan serve to start my server.
+Level 2:
+Process:
+Step 1:Create a  folder in App\Responses and then create a  file named HttpResponses
+Step 2:Create a controller named AuthController using php artisan make:controller AuthController on cmd
+Step 3:On api.php file i create my routes for login and register.
+Level 3:
+Step 1:Create a request using php artisan make:request UserRequest on cmd and change the authorize function from false to true
+Step 2:Create my register function on AuthController and then create a user using postman.
+Step 3:Create another request using php artisan make:request LoginUserRequest on cmd and change the authorize function from false to true
+Steo 4:Create my login function on AuthController 
+Step 5:Adjusting settings on Postman and receive in api form the new generate token for the user who log in.
+Level 4:
+Step 1:Create a table called companies using php artisan make:model companies -m  ( migrate param ) on cmd
+Step 2:Migrate it into the DB using php artisan migrate
+Step 3:Adding manually the 5 random data(I could have done it with factory and seed which is the right way)
+Step 4:Create my getCompanies controller using php aritsan make:controller getCompanies -r (resource param)
+Step 5:Create a resource  getCompaniesResource using php artisan make:resource getCompaniesResource to return my data with json method
+Step 6:Return all data from the table using all method withing the index function of the controller
+Final Step:Create the endpoint getcompanies and adjusting my routes from public to protected using middleware so the user will need the token to access the data else unauthorized message pops up
+Level 5:
+A)
+Step 1:Insert the DB using import on phpmyadmin with name test for the DB and add values to the user_id on events_table before import it
+Step 2:Create a foreign key user_id on events table
+Step 3:Create a model called Events using php artisan make:model Events
+Step 4:Create a controller called EventsController
+Step 5:Create a resource called eventResource to get the data in json form
+Step 6:Create the relationship between User and Events
+Final Step:Create the route and the endpoint for Postman.
+B)
+Instructors belongs to Lessons
+Lessons belongs to Topics
+And Topics belongs to Events
+I couldn't translate my though process into code.
+
+
+
+
